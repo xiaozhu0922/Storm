@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TabLayout-->
+    <string-array name="mainTitles">
+        <item>日记</item>
+        <item>段子</item>
+        <item>墙纸</item>
+    </string-array>
+
+    <integer-array name="mainIcons">
+        <item>@drawable/diary_unselected</item>
+        <item>@drawable/duanzi_unselected</item>
+        <item>@drawable/meizi_unselected</item>
+    </integer-array>
+
+    <integer-array name="mainSelectedIcons">
+        <item>@drawable/diary_selected</item>
+        <item>@drawable/duanzi_selected</item>
+        <item>@drawable/meizi_selected</item>
+    </integer-array>
+
+</resources>
