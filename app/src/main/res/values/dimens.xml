@@ -5,6 +5,7 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="toolbar_padding_top">0dp</dimen>
 
 
     <!-- 统一字体规格 -->
@@ -13,4 +14,6 @@
     <dimen name="text_normal">16sp</dimen>
     <dimen name="text_small">14sp</dimen>
     <dimen name="text_small_more">12sp</dimen>
+
+
 </resources>
