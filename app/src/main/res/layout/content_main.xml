@@ -25,7 +25,7 @@
         app:tl_iconHeight="25dp"
         app:tl_iconWidth="30dp"
         app:tl_indicator_color="@color/white"
-        app:tl_textSelectColor="@color/colorPrimary"
+        app:tl_textSelectColor="@color/blue_400"
         app:tl_textUnselectColor="@color/gray_black"
         app:tl_textsize="13sp" />
 

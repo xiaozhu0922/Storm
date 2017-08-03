@@ -1,0 +1,11 @@
+<resources>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="colorControlActivated">@color/blue_400</item>
+    <item name="colorControlHighlight">@color/blue_400</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowActionBar">false</item>
+</style>
+
+
+</resources>

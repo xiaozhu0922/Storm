@@ -1,33 +1,24 @@
 package csmz.storm.zhu;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.view.ContextMenu;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
+import com.githang.statusbar.StatusBarCompat;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
 import csmz.storm.zhu.adapters.ViewPagerAdapter;
 import csmz.storm.zhu.app.CommonActivity;
 import csmz.storm.zhu.diary.DiaryFragment;
@@ -35,6 +26,7 @@ import csmz.storm.zhu.duanzi.DuanZiFragment;
 import csmz.storm.zhu.utils.CommonInterfaceUtil;
 import csmz.storm.zhu.utils.CommonTabLayoutUtil;
 import csmz.storm.zhu.utils.CommonUtil;
+import csmz.storm.zhu.utils.ToastUtil;
 import csmz.storm.zhu.wallpaper.WallpaperFragment;
 
 public class MainActivity extends CommonActivity
@@ -54,9 +46,18 @@ public class MainActivity extends CommonActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initView();
         initData();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                //将侧边栏顶部延伸至status bar
+                drawerLayout.setFitsSystemWindows(true);
+                //将主页面顶部延伸至status bar;虽默认为false,但经测试,DrawerLayout需显示设置
+                drawerLayout.setClipToPadding(false);
+            }
+        }
     }
 
     private void initView() {
@@ -68,7 +69,6 @@ public class MainActivity extends CommonActivity
     }
 
     private void initData() {
-
         initVierPager();
         initTabLayout();
     }
@@ -100,12 +100,11 @@ public class MainActivity extends CommonActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.nav_camera) {
-        } else if (id == R.id.nav_gallery) {
-        } else if (id == R.id.nav_slideshow) {
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_share) {
         } else if (id == R.id.nav_share) {
         } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_menu_loginOut) {
+            super.onBackPressed();
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -125,7 +124,7 @@ public class MainActivity extends CommonActivity
         } else if ((currentTime - exitTime) < 2000) {
             super.onBackPressed();
         } else {
-            Snackbar.make(drawerLayout, getString(R.string.double_click_exit), Snackbar.LENGTH_SHORT).show();
+            ToastUtil.showShort(this, getString(R.string.toast_text));
             exitTime = currentTime;
         }
     }

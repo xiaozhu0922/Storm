@@ -2,13 +2,11 @@
 
     <!--Manifest-->
     <string name="app_name">Storm</string>
-    <string name="action_settings">Settings</string>
-
 
     <!--Main  Activity-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="double_click_exit">再按一次退出程序</string>
+    <string name="toast_text">再按一次退出程序</string>
 
 
     <!--Navigation Item-->
