@@ -10,10 +10,10 @@ public interface IItemClickView {
     /**
      * Item的点击
      */
-    void onItemClick(View view, int position, int type);
+    void onItemClick(View view, int position);
 
     /**
      * Item的长点击
      */
-    void onItemLongClick(View view, int position, int type);
+    void onItemLongClick(View view, int position);
 }

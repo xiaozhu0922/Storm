@@ -8,14 +8,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import csmz.storm.zhu.R;
 import csmz.storm.zhu.app.CommonFragment;
 import csmz.storm.zhu.duanzi.view.IDuanZiView;
 import csmz.storm.zhu.presenter.IMultiClickPresenter;
 import csmz.storm.zhu.presenter.MultiClickPresenterCompl;
 import csmz.storm.zhu.utils.ClickEffectUtil;
+import csmz.storm.zhu.utils.OkHttpUtils;
 import csmz.storm.zhu.utils.ToastUtil;
 import csmz.storm.zhu.view.IMultiClickView;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 
 public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.OnClickListener, IMultiClickView {
@@ -61,9 +67,10 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
     @Override
     public void onMultiClickResult(View view) {
 
+
         switch (view.getId()) {
             case R.id.btn_send:
-                ToastUtil.showShort(getActivity(), "ZHU");
+
                 break;
 
         }
