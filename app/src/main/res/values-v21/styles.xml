@@ -11,5 +11,14 @@
 
     </style>
 
+    <style name="HomeTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
+        <item name="colorControlActivated">@color/blue_400</item>
+        <item name="colorControlHighlight">@color/blue_400</item>
+        <item name="android:colorControlHighlight">@color/blue_400</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#B0CCE8</item>
+    </style>
 </resources>

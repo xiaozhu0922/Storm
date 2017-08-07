@@ -120,5 +120,6 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
     @Override
     public void onClick(View view) {
 
+        AddDiaryActivity.startActivity(getActivity());
     }
 }

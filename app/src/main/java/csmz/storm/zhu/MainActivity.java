@@ -10,7 +10,9 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -41,6 +43,7 @@ public class MainActivity extends CommonActivity
     private int[] mainIcons, mainSelectedIcons;
     private ViewPagerAdapter mainViewPagerAdapter;
     private long exitTime;
+    private ImageView iv_Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,7 @@ public class MainActivity extends CommonActivity
     }
 
     private void initView() {
+
         vp_main = findView(R.id.view_pager);
         tl_main = findView(R.id.tab_layout);
         drawerLayout = findView(R.id.drawer_layout);

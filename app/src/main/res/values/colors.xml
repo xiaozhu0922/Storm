@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#009688</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#B0CCE8</color>
+    <color name="colorPrimaryDark">#B0CCE8</color>
 
     <!--自建-->
     <color name="white">#ffffff</color>

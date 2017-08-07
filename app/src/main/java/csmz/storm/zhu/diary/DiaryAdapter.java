@@ -73,7 +73,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
         holder.mIvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              
+
             }
         });
     }
