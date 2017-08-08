@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#B0CCE8</color>
-    <color name="colorPrimaryDark">#B0CCE8</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#2196F3</color>
 
     <!--自建-->
     <color name="white">#ffffff</color>
     <color name="gray_black">#cdcdcd</color>
-    <color name="blue_400">#008BE6</color>
-
-
+    <color name="blue_400">#2196F3</color>
+    <color name="fab_add">#24d63c</color>
+    <color name="fab_back">#e41c1c</color>
 </resources>

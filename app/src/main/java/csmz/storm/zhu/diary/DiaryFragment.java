@@ -1,5 +1,6 @@
 package csmz.storm.zhu.diary;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -119,7 +120,6 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
 
     @Override
     public void onClick(View view) {
-
-        AddDiaryActivity.startActivity(getActivity());
+        startActivity(new Intent(getActivity(), AddDiaryActivity.class));
     }
 }

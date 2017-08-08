@@ -7,8 +7,7 @@
     android:background="@color/colorPrimary"
     android:elevation="1dp"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    app:navigationIcon="@drawable/ic_back"
+    android:minHeight="?attr/actionBarSize"
     app:popupTheme="@style/MyToolbarPopupTheme"
     app:theme="@style/ToolBarTheme">
 
@@ -18,15 +17,13 @@
         android:layout_gravity="center"
         android:orientation="horizontal">
 
-
         <TextView
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/app_name"
-            android:textColor="@color/blue_400"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_large" />
     </LinearLayout>
 

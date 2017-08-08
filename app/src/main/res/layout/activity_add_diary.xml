@@ -11,21 +11,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="20dp"
-
+        android:layout_margin="20dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingRight="20dp">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/add_diary_tv_date"
+                android:id="@+id/add_time"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical"
@@ -34,30 +30,29 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/add_diary_et_title"
+                android:id="@+id/add_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/shape_add_diary_title"
                 android:enabled="true"
                 android:gravity="top"
+                android:hint="标题"
                 android:maxLines="10"
                 android:minLines="8"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:scrollbars="vertical" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
             <csmz.storm.zhu.diary.widget.LinedEditText
-                android:id="@+id/add_diary_et_content"
+                android:id="@+id/et_content"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:background="@drawable/shape_add_diary_title"
                 android:enabled="true"
                 android:gravity="top"
+                android:hint="内容"
                 android:lineSpacingExtra="5dp"
                 android:maxLines="10"
                 android:minLines="8"
@@ -69,7 +64,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="95dp">
+                android:layout_height="100dp">
 
             </LinearLayout>
 
@@ -84,30 +79,25 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             app:fab_addButtonSize="mini"
-            app:fab_colorNormal="#f0f01a"
             app:fab_expandDirection="right"
             app:fab_icon="@drawable/menu">
 
             <cc.trity.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_diary_fab_back"
+                android:id="@+id/fab_add"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                app:fab_colorNormal="#24d63c"
+                app:fab_colorNormal="@color/fab_add"
                 app:fab_icon="@drawable/save_new"
                 app:fab_size="normal" />
 
             <cc.trity.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_diary_fab_add"
+                android:id="@+id/fab_back"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/save"
-                app:fab_colorNormal="#e41c1c"
+                app:fab_colorNormal="@color/fab_back"
                 app:fab_icon="@drawable/back_new"
-                app:fab_size="normal"
-                app:fab_title="FAB 2" />
-
-            />
-
+                app:fab_size="normal" />
 
         </cc.trity.floatingactionbutton.FloatingActionsMenu>
 

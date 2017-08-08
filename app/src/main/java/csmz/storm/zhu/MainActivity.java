@@ -43,7 +43,6 @@ public class MainActivity extends CommonActivity
     private int[] mainIcons, mainSelectedIcons;
     private ViewPagerAdapter mainViewPagerAdapter;
     private long exitTime;
-    private ImageView iv_Back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
