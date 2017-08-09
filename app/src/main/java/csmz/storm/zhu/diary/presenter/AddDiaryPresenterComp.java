@@ -1,6 +1,5 @@
 package csmz.storm.zhu.diary.presenter;
 
-import csmz.storm.zhu.diary.AddDiaryActivity;
 import csmz.storm.zhu.diary.view.IAddDiaryView;
 
 /**

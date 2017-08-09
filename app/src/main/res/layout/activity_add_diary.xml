@@ -30,7 +30,7 @@
                 android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/add_title"
+                android:id="@+id/ed_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/shape_add_diary_title"

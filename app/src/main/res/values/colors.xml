@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#2196F3</color>
-
+    <color name="colorAccent">#2196F3</color>
     <!--自建-->
     <color name="white">#ffffff</color>
     <color name="gray_black">#cdcdcd</color>

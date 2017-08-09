@@ -1,22 +1,19 @@
 package csmz.storm.zhu;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
-import com.githang.statusbar.StatusBarCompat;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,10 +57,11 @@ public class MainActivity extends CommonActivity
                 drawerLayout.setClipToPadding(false);
             }
         }
+
+        //EventBus.getDefault().register(this);
     }
 
     private void initView() {
-
         vp_main = findView(R.id.view_pager);
         tl_main = findView(R.id.tab_layout);
         drawerLayout = findView(R.id.drawer_layout);
@@ -130,5 +128,11 @@ public class MainActivity extends CommonActivity
             ToastUtil.showShort(this, getString(R.string.toast_text));
             exitTime = currentTime;
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

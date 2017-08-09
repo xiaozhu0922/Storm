@@ -15,6 +15,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.List;
 
 import csmz.storm.zhu.R;
+import csmz.storm.zhu.diary.event.StartUpdateDiaryEvent;
 import csmz.storm.zhu.diary.mode.DiaryBean;
 import csmz.storm.zhu.utils.GetDateUtils;
 
@@ -74,6 +75,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
             @Override
             public void onClick(View v) {
 
+                EventBus.getDefault().post(new StartUpdateDiaryEvent(mData.get(position)));
             }
         });
     }

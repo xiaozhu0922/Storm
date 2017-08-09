@@ -7,10 +7,13 @@ import android.os.Bundle;
 
 import csmz.storm.zhu.R;
 
-public class UpDataDiaryActivity extends AppCompatActivity {
+public class UpDateDiaryActivity extends AppCompatActivity {
 
-    public static void startActivity(Context context) {
-        Intent intent = new Intent(context, UpDataDiaryActivity.class);
+    public static void startActivity(Context context, String title, String content, String tag) {
+        Intent intent = new Intent(context, UpDateDiaryActivity.class);
+        intent.putExtra("title", title);
+        intent.putExtra("content", content);
+        intent.putExtra("tag", tag);
         context.startActivity(intent);
     }
 
