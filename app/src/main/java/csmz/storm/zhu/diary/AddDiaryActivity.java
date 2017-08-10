@@ -63,6 +63,7 @@ public class AddDiaryActivity extends CommonActivity implements IAddDiaryView, V
         edTitle = findView(R.id.ed_title);
         edContent = findView(R.id.et_content);
 
+
     }
 
     @Override
@@ -124,7 +125,7 @@ public class AddDiaryActivity extends CommonActivity implements IAddDiaryView, V
         final String content = edContent.getText().toString();
         if (!title.isEmpty() || !content.isEmpty()) {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            alertDialog.setMessage("是否保存日记内容？")
+            alertDialog.setTitle("是否保存日记内容？")
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

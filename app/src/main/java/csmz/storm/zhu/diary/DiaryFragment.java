@@ -30,9 +30,6 @@ import csmz.storm.zhu.utils.ToastUtil;
 
 public class DiaryFragment extends CommonFragment implements IDiaryView, View.OnClickListener {
 
-    private TextView tvTime, tvContent;
-    private RelativeLayout rlMain;
-    private LinearLayout llMain, llControl, itemFirst;
     private RecyclerView recyclerDiary;
     private FloatingActionButton fabAdd;
 
@@ -68,17 +65,6 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
         if (cursor.moveToFirst()) {
             do {
                 String date = cursor.getString(cursor.getColumnIndex("date"));
-                String dateSystem = GetDateUtils.getDate().toString();
-                if (date.equals(dateSystem)) {
-                    llMain.removeView(itemFirst);
-                }
-                break;
-            } while (cursor.moveToNext());
-        }
-
-        if (cursor.moveToFirst()) {
-            do {
-                String date = cursor.getString(cursor.getColumnIndex("date"));
                 String title = cursor.getString(cursor.getColumnIndex("title"));
                 String content = cursor.getString(cursor.getColumnIndex("content"));
                 String tag = cursor.getString(cursor.getColumnIndex("tag"));
@@ -91,11 +77,8 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
             diaryList.add(mDiaryBeanList.get(i));
         }
         mDiaryBeanList = diaryList;
-
-
         recyclerDiary.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerDiary.setAdapter(new DiaryAdapter(getActivity(), mDiaryBeanList));
-
     }
 
     @Override
