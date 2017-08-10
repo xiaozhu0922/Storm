@@ -45,7 +45,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
     public void onBindViewHolder(final DiaryViewHolder holder, final int position) {
         String dateSystem = GetDateUtils.getDate().toString();
         if (mData.get(position).getDate().equals(dateSystem)) {
-            holder.mIvCircle.setImageResource(R.drawable.circle_orange);
+            holder.mIvCircle.setImageResource(R.drawable.yuan);
         }
         holder.mTvDate.setText(mData.get(position).getDate());
         holder.mTvTitle.setText(mData.get(position).getTitle());

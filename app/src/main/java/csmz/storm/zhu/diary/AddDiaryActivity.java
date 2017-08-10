@@ -31,7 +31,6 @@ public class AddDiaryActivity extends CommonActivity implements IAddDiaryView, V
     private EditText edTitle;
     private LinedEditText edContent;
     private FloatingActionButton addButton, backButton;
-    //private FloatingActionsMenu mRightLabels;
     private AddDiaryPresenter addDiaryPresenter;
     private DiaryDbHelper dbHelper;
 

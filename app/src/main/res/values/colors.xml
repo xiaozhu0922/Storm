@@ -9,4 +9,5 @@
     <color name="blue_400">#2196F3</color>
     <color name="fab_add">#24d63c</color>
     <color name="fab_back">#e41c1c</color>
+    <color name="fab_delete">#e33e46</color>
 </resources>

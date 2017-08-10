@@ -57,8 +57,6 @@ public class MainActivity extends CommonActivity
                 drawerLayout.setClipToPadding(false);
             }
         }
-
-        //EventBus.getDefault().register(this);
     }
 
     private void initView() {
@@ -130,9 +128,5 @@ public class MainActivity extends CommonActivity
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
-    }
+
 }

@@ -8,6 +8,7 @@
     android:elevation="1dp"
     android:fitsSystemWindows="true"
     android:minHeight="?attr/actionBarSize"
+    app:layout_scrollFlags="scroll|enterAlways"
     app:popupTheme="@style/MyToolbarPopupTheme"
     app:theme="@style/ToolBarTheme">
 

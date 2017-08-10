@@ -56,14 +56,6 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
         recyclerDiary = findView(R.id.recycler_diary, view);
         fabAdd = findView(R.id.fab_add, view);
 
-        tvTime = findView(R.id.tv_time, view);
-        tvContent = findView(R.id.tv_content, view);
-
-        rlMain = findView(R.id.rl_main, view);
-        llMain = findView(R.id.ll_main, view);
-        llControl = findView(R.id.ll_control, view);
-        itemFirst = findView(R.id.item_first, view);
-        tvTime.setText(GetDateUtils.getDate());
     }
 
     @Override
