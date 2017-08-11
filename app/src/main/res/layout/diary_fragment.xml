@@ -18,6 +18,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_query_none"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_empty"
+        android:text="暂时没有数据!"
+        android:textColor="@color/gray_black"
+        android:textSize="@dimen/text_large" />
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_width="wrap_content"

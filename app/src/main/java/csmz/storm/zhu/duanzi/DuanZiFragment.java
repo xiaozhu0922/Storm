@@ -25,8 +25,6 @@ import okhttp3.Response;
 
 
 public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.OnClickListener, IMultiClickView {
-    private Button button;
-    private TextView textView;
 
     private IMultiClickPresenter mIMultiClickPresenter;
 
@@ -44,8 +42,6 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
     public void initUI(View view) {
         mIMultiClickPresenter = new MultiClickPresenterCompl(this);
 
-        button = findView(R.id.btn_send, view);
-        textView = findView(R.id.tv_text, view);
     }
 
     @Override
@@ -55,8 +51,7 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
 
     @Override
     public void setOnClickListener() {
-        ClickEffectUtil.set(button);
-        button.setOnClickListener(this);
+
     }
 
     @Override
@@ -67,12 +62,5 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
     @Override
     public void onMultiClickResult(View view) {
 
-
-        switch (view.getId()) {
-            case R.id.btn_send:
-
-                break;
-
-        }
     }
 }

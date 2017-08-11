@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
-    <Button
-        android:id="@+id/button3"
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/wallpaper_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_wallpaper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_query_none"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button3" />
-</LinearLayout>
+        android:layout_gravity="center"
+        android:drawableTop="@drawable/ic_empty"
+        android:text="暂时没有数据!"
+        android:textColor="@color/gray_black"
+        android:textSize="@dimen/text_large" />
+
+
+</android.support.design.widget.CoordinatorLayout>

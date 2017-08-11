@@ -23,7 +23,7 @@ import csmz.storm.zhu.utils.ClickEffectUtil;
 import csmz.storm.zhu.utils.GetDateUtils;
 
 public class UpDateDiaryActivity extends CommonActivity implements IUpdateDiaryView, View.OnClickListener {
-    private TextView tvTitle, tvTime;
+    private TextView tvTitle, tvTime, tvTag;
     private Toolbar toolbar;
     private EditText edTitle;
     private LinedEditText edContent;
@@ -55,6 +55,7 @@ public class UpDateDiaryActivity extends CommonActivity implements IUpdateDiaryV
         toolbar = findView(R.id.toolbar);
         edTitle = findView(R.id.ed_title);
         edContent = findView(R.id.et_content);
+        tvTag = findView(R.id.tv_tag);
         toolbar.setNavigationIcon(R.drawable.app_back);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -73,6 +74,7 @@ public class UpDateDiaryActivity extends CommonActivity implements IUpdateDiaryV
     public void initData(Intent intent) {
         edTitle.setText(intent.getStringExtra("title"));
         edContent.setText(intent.getStringExtra("content"));
+        tvTag.setText(intent.getStringExtra("tag"));
     }
 
     @Override
@@ -125,7 +127,10 @@ public class UpDateDiaryActivity extends CommonActivity implements IUpdateDiaryV
         alertDialog.setTitle("确定要删除日记吗？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                String tag = tvTag.getText().toString();
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.delete("Diary", "tag=?", new String[]{tag});
+                finish();
             }
         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override

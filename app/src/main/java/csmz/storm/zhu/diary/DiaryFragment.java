@@ -32,7 +32,7 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
 
     private RecyclerView recyclerDiary;
     private FloatingActionButton fabAdd;
-
+    private TextView tvEmpty;
     private DiaryDbHelper mDiaryDbHelper;
     private List<DiaryBean> mDiaryBeanList;
 
@@ -52,7 +52,7 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
     public void initUI(View view) {
         recyclerDiary = findView(R.id.recycler_diary, view);
         fabAdd = findView(R.id.fab_add, view);
-
+        tvEmpty = findView(R.id.tv_query_none, view);
     }
 
     @Override
@@ -77,6 +77,7 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
             diaryList.add(mDiaryBeanList.get(i));
         }
         mDiaryBeanList = diaryList;
+        tvEmpty.setVisibility(mDiaryBeanList.size() == 0 ? View.VISIBLE : View.GONE);
         recyclerDiary.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerDiary.setAdapter(new DiaryAdapter(getActivity(), mDiaryBeanList));
     }
