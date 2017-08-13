@@ -2,6 +2,10 @@ package csmz.storm.zhu.duanzi.view;
 
 import android.view.View;
 
+import java.util.List;
+
+import csmz.storm.zhu.duanzi.mode.DuanBean;
+
 /**
  * Created by uniface on 2017/8/3.
  */
@@ -23,4 +27,16 @@ public interface IDuanZiView {
      */
     void setOnClickListener();
 
+    /**
+     * 取消进度条
+     */
+    void dismissLoading();
+
+    /**
+     * 显示进度条
+     */
+    void showLoading(String msg);
+
+
+    void addDataBean(List<DuanBean> beanList);
 }

@@ -10,4 +10,10 @@
     <color name="fab_add">#24d63c</color>
     <color name="fab_back">#e41c1c</color>
     <color name="fab_delete">#e33e46</color>
+
+
+    <color name="xlistview_header_normal_font">#000000</color>
+    <color name="xlistview_header_last_time_font">#000000</color>
+    <color name="xlistview_footer_normal_font">#000000</color>
+    <color name="xlistview_footer_loading_font">#000000</color>
 </resources>

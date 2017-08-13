@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import csmz.storm.zhu.R;
+import csmz.storm.zhu.adapters.LinearLayoutColorDivider;
 import csmz.storm.zhu.app.CommonFragment;
 import csmz.storm.zhu.constants.Constants;
 import csmz.storm.zhu.diary.db.DiaryDbHelper;
@@ -79,6 +80,7 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
         mDiaryBeanList = diaryList;
         tvEmpty.setVisibility(mDiaryBeanList.size() == 0 ? View.VISIBLE : View.GONE);
         recyclerDiary.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerDiary.addItemDecoration(new LinearLayoutColorDivider(getResources(), R.color.gray_black, R.dimen.line_height, LinearLayoutManager.VERTICAL));
         recyclerDiary.setAdapter(new DiaryAdapter(getActivity(), mDiaryBeanList));
     }
 
