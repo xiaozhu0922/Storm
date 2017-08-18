@@ -14,7 +14,11 @@
             android:id="@+id/recycler_diary"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            app:mrl_rippleAlpha="0.2"
+            app:mrl_rippleColor="#8d575757"
+            app:mrl_rippleHover="true"
+            app:mrl_rippleOverlay="true" />
 
     </LinearLayout>
 

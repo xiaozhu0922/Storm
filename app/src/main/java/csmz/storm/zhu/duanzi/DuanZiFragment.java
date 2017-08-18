@@ -23,6 +23,7 @@ import csmz.storm.zhu.duanzi.view.IDuanZiView;
 import csmz.storm.zhu.presenter.IMultiClickPresenter;
 import csmz.storm.zhu.presenter.MultiClickPresenterCompl;
 import csmz.storm.zhu.ui.XRecyclerView;
+import csmz.storm.zhu.utils.ClickEffectUtil;
 import csmz.storm.zhu.view.IMultiClickView;
 
 
@@ -72,7 +73,7 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
 
     @Override
     public void setOnClickListener() {
-
+      //  ClickEffectUtil.set(mRecyclerDuan);
     }
 
     @Override
@@ -91,6 +92,7 @@ public class DuanZiFragment extends CommonFragment implements IDuanZiView, View.
         mRecyclerDuan.addItemDecoration(new LinearLayoutColorDivider(getResources(), R.color.gray_black, R.dimen.line_height, LinearLayoutManager.VERTICAL));
         mRecyclerDuan.setRefreashEnable(true);
         mRecyclerDuan.setPullLoadEnable(true);
+        beanList.remove(3);
         mRecyclerDuan.setAdapter(new DuanZiAdapter(DuanZiFragment.this, beanList));
         mRecyclerDuan.setXRecyclerViewListener(this);
         isEmpty.setVisibility(beanList.size() == 0 ? View.VISIBLE : View.GONE);

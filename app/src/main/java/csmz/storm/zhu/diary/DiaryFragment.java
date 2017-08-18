@@ -87,6 +87,7 @@ public class DiaryFragment extends CommonFragment implements IDiaryView, View.On
     @Override
     public void setClickListener() {
         ClickEffectUtil.set(fabAdd);
+
         fabAdd.setOnClickListener(this);
     }
 

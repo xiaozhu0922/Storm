@@ -1,9 +1,52 @@
 package csmz.storm.zhu.constants;
 
 
+import android.content.Context;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import csmz.storm.zhu.utils.GetRandom;
+import csmz.storm.zhu.utils.ToastUtil;
+
 public class Constants {
 
     public static final String DB_NAME = "Diary.db";
+
+    private static String meiziData = "";
+
+    /**
+     * 返回一个随机生成的妹子 Api
+     *
+     * @return meizi Api
+     */
+    public static String getMeiziApi() {
+        StringBuilder meiziApi = new StringBuilder();
+        meiziApi.append("http://gank.io/api/data/%E7%A6%8F%E5%88%A9/").append("15").append("/" + GetRandom.getRandom());
+        return String.valueOf(meiziApi);
+    }
+
+    public static String getMeiziData(final Context context) {
+        String url = getMeiziApi();
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
+        StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String s) {
+                meiziData = s;
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                ToastUtil.showShort(context, error.getMessage());
+            }
+        });
+        //SleepApplication sleepApplication = new SleepApplication();
+        requestQueue.add(stringRequest);
+        return meiziData;
+    }
 
     public static class URL {
         /**
